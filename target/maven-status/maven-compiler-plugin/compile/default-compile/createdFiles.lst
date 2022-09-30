@@ -1,0 +1,7 @@
+dev\entringer\openapisample\controllers\GetToDoItemById.class
+dev\entringer\openapisample\OpenApiSampleApp.class
+dev\entringer\openapisample\controllers\CreateToDoItem.class
+dev\entringer\openapisample\controllers\DeleteToDoItem.class
+dev\entringer\openapisample\controllers\GetAllToDoItems.class
+dev\entringer\openapisample\controllers\UpdateToDoItem.class
+dev\entringer\openapisample\model\ToDoItem.class
