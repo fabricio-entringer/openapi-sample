@@ -30,3 +30,5 @@ hs_err_pid*
 /.project/
 /.metadata/
 /.settings/
+/openapi-sample-consumer/target/
+/openapi-sample-provider/target/

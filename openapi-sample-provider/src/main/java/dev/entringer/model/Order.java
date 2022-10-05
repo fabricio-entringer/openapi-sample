@@ -1,4 +1,4 @@
-package dev.entringer.openapisample.model;
+package dev.entringer.model;
 
 import java.math.BigDecimal;
 

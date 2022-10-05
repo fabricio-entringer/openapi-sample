@@ -1,4 +1,5 @@
-package dev.entringer.openapisample.model;
+package dev.entringer.model;
+
 
 public record Product(int id, String description) {
 }

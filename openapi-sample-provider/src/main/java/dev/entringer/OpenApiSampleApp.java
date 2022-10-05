@@ -1,4 +1,4 @@
-package dev.entringer.openapisample;
+package dev.entringer;
 
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -18,9 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 								version = "1.0",
 								contact = @Contact(name = "Fabricio Entringer", email = "moreira@gmal.com")),
 					servers = {@Server(url = "http://localhost:8080"), @Server(url = "https://openapi-sample.org")},
-					security = @SecurityRequirement(name = "Logged User", scopes = {"ADMIM", "USER"}),
 					externalDocs = @ExternalDocumentation(description = "User Requirements", url = "https://openapi-sample.org/docs"))
-@SecurityScheme(name = "BearerJWT", type = SecuritySchemeType.OPENIDCONNECT, description = "Authentication via Keycloak/OAUTH2", in = SecuritySchemeIn.HEADER, bearerFormat = "JWT")
 public class OpenApiSampleApp {
 
 	public static void main(String[] args) {
