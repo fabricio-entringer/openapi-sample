@@ -32,3 +32,5 @@ hs_err_pid*
 /.settings/
 /openapi-sample-consumer/target/
 /openapi-sample-provider/target/
+/consumer/target/
+/server/target/

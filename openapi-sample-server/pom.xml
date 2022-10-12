@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>openapi-sample-provider</artifactId>
+    <artifactId>server</artifactId>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -21,11 +21,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.11</version>
+            <version>${springdoc-openapi.version}</version>
         </dependency>
     </dependencies>
     <build>
@@ -48,7 +49,7 @@
             <plugin>
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-maven-plugin</artifactId>
-                <version>1.4</version>
+                <version>${springdoc-openapi-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>integration-test</id>
@@ -58,7 +59,6 @@
                     </execution>
                 </executions>
                 <configuration>
-<!--                    <apiDocsUrl>http://localhost:8080/v3/api-docs.yaml</apiDocsUrl>-->
                     <outputFileName>openapi.yaml</outputFileName>
                     <outputDir>generated</outputDir>
                     <skip>false</skip>
@@ -68,8 +68,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>16</source>
-                    <target>16</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
 

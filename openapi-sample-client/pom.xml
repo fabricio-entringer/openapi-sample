@@ -9,28 +9,29 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>openapi-sample-consumer</artifactId>
+    <artifactId>consumer</artifactId>
 
     <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.github.joschi.jackson</groupId>
-            <artifactId>jackson-datatype-threetenbp</artifactId>
-            <version>2.6.4</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-annotations</artifactId>
-            <version>2.2.2</version>
+            <version>${swagger-annotations.version}</version>
         </dependency>
     </dependencies>
 
@@ -39,7 +40,7 @@
             <plugin>
                 <groupId>io.swagger.codegen.v3</groupId>
                 <artifactId>swagger-codegen-maven-plugin</artifactId>
-                <version>3.0.31</version>
+                <version>${swagger-codegen-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -50,15 +51,26 @@
                             <language>java</language>
                             <library>resttemplate</library>
                             <modelNameSuffix>Pub</modelNameSuffix>
-                            <apiPackage>dev.entringer.consumer</apiPackage>
+                            <apiPackage>dev.entringer.api</apiPackage>
+                            <modelPackage>dev.entringer.model</modelPackage>
+                            <invokerPackage>dev.entringer.invoker</invokerPackage>
+                            <generateModels>true</generateModels>
+                            <generateModelDocumentation>false</generateModelDocumentation>
+                            <generateApis>true</generateApis>
+                            <generateApiTests>false</generateApiTests>
+                            <generateModelTests>false</generateModelTests>
+                            <generateSupportingFiles>true</generateSupportingFiles>
                             <configOptions>
-                                <sourceFolder>src/main/java</sourceFolder>
+                                <hideGenerationTimestamp>true</hideGenerationTimestamp>
+                                <sortParamsByRequiredFlag>true</sortParamsByRequiredFlag>
+                                <checkDuplicatedModelName>true</checkDuplicatedModelName>
+                                <useBeanValidation>false</useBeanValidation>
+                                <dateLibrary>java8-localdatetime</dateLibrary>
                             </configOptions>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 

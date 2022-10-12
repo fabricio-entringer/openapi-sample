@@ -4,22 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>openapi-sample-provider</module>
-        <module>openapi-sample-consumer</module>
+        <module>openapi-sample-client</module>
+        <module>openapi-sample-server</module>
     </modules>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
-        <relativePath/>
-    </parent>
     <groupId>dev.entringer</groupId>
     <artifactId>openapi-sample</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>openapi-sample</name>
-    <description>Sample using Open API for API documentation</description>
+    <description>Sample using Open API for API documentation and Swagger codegen for client classes.</description>
     <properties>
-        <java.version>16</java.version>
+        <java.version>19</java.version>
+        <spring.version>2.7.4</spring.version>
+        <jackson.version>2.14.0-rc1</jackson.version>
+        <swagger-annotations.version>2.2.2</swagger-annotations.version>
+        <swagger-codegen-maven-plugin.version>3.0.31</swagger-codegen-maven-plugin.version>
+        <springdoc-openapi.version>1.6.11</springdoc-openapi.version>
+        <springdoc-openapi-maven-plugin.version>1.4</springdoc-openapi-maven-plugin.version>
     </properties>
 
 </project>
